@@ -2,7 +2,7 @@ FROM ubuntu
 MAINTAINER jimmykarily@gmail.com
 
 RUN apt-get update && apt-get install -y \
-    apache2 libapache2-mod-php php-mcrypt php-mysql
+    apache2 libapache2-mod-php php-mcrypt php-mysql php-gd php-curl php-zip php-mysql
 
 VOLUME ["/var/sites"]
 EXPOSE 80
