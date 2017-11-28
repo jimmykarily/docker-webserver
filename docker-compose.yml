@@ -1,0 +1,20 @@
+version: "2"
+services:
+  web:
+    build: apache/.
+    container_name: development-apache
+    volumes:
+      - ./sites:/var/sites
+    ports:
+      - "80:80"
+    depends_on:
+      - mysql
+    links:
+      - mysql:mysql
+  mysql:
+    image: mysql:5.7
+    container_name: development-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: password
